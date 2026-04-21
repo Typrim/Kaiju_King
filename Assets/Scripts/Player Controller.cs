@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //colliding with buildings
+        //colliding buildings
         if (collision.gameObject.CompareTag("Building"))
         {
             SceneManager.LoadScene("Game Over");

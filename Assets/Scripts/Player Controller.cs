@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +17,15 @@ public class PlayerController : MonoBehaviour
         if (Keyboard.current.wKey.wasPressedThisFrame)
         {
             GetComponent<Rigidbody2D>().AddForce(Vector3.up * JUMP_FORCE);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        //colliding with buildings
+        if (collision.gameObject.CompareTag("Building"))
+        {
+            SceneManager.LoadScene("Game Over");
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    private float JUMP_FORCE = 250;
+    private float JUMP_FORCE = 400;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

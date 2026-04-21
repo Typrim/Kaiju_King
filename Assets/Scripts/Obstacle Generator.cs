@@ -40,7 +40,7 @@ public class ObstacleGenerator : MonoBehaviour
                 } else
                 {
                     Vector3 position = currentBuildings[index].transform.position;
-                    position.x -= 0.001f;
+                    position.x -= 0.003f;
                     currentBuildings[index].transform.position = position;
                 }
             }

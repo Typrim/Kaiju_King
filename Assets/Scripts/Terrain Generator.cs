@@ -5,7 +5,7 @@ public class TerrainGenerator : MonoBehaviour
     //y-coordinate of ground
     private const float groundY = -2.2f;
     //ground speed (perceived as player speed)
-    private const float speed = .001f;
+    private const float speed = .003f;
     private const float leftmostX = -10;
     private const int groundWidth = 21;
     private const int groundDepth = 4;

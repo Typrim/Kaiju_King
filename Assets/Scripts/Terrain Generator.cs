@@ -5,7 +5,7 @@ public class TerrainGenerator : MonoBehaviour
     //y-coordinate of ground
     private const float groundY = -2.2f;
     //ground speed (perceived as player speed)
-    private const float speed = .003f;
+    private const float speed = 5f;
     private const float leftmostX = -10;
     private const int groundWidth = 21;
     private const int groundDepth = 4;
@@ -76,7 +76,7 @@ public class TerrainGenerator : MonoBehaviour
 
                 //move terrain
                 Vector3 position = tile.transform.position;
-                position.x -= speed;
+                position.x -= speed * Time.deltaTime;
                 tile.transform.position = position;
             }
         }
@@ -85,7 +85,7 @@ public class TerrainGenerator : MonoBehaviour
     private GameObject[] generateTerrainRight()
     {
         GameObject[] newTerrain = new GameObject[groundDepth];
-        Vector3 position = new Vector3(leftmostX + groundWidth * 0.99f, groundY, 0);
+        Vector3 position = new Vector3(leftmostX + groundWidth * 0.95f, groundY, 0);
         newTerrain[0] = Instantiate(groundTileOptions[Random.Range(0, groundTileOptions.Length - 1)], position, Quaternion.identity);
         position.y -= 0.87f;
         newTerrain[1] = Instantiate(undergroundTileOptions[Random.Range(0, undergroundTileOptions.Length - 1)], position, Quaternion.identity);

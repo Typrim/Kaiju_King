@@ -17,7 +17,6 @@ public class PlayAgainButton : MonoBehaviour
 
     public void StartGame()
     {
-        print("Click!");
         SceneManager.LoadScene("Gameplay");
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    private float JUMP_FORCE = 400;
+    private float JUMP_FORCE = 500;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.wKey.wasPressedThisFrame)
+        if (Keyboard.current.wKey.wasPressedThisFrame && transform.position.y < -1.5)
         {
             GetComponent<Rigidbody2D>().AddForce(Vector3.up * JUMP_FORCE);
         }
